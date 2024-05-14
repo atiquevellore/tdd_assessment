@@ -4,7 +4,7 @@ class StringCalculator
        if numbers.strip.empty?
             0
        else
-            numbers.split(",").map{|num| sum+=num.to_i}
+            numbers.split(/(,|\n)/).map{ |num| num.to_i == 0 ? next : sum+=num.to_i}
             sum
        end
 

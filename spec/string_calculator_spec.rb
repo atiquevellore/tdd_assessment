@@ -1,6 +1,6 @@
 require "string_calculator"
 describe StringCalculator do
-    context "add method can take up to two numbers" do
+    context "add method can take up to two numbers separated by commas" do
         it "returns their sum" do
             expect(StringCalculator.add("1,2")).to eq(3)  
         end
@@ -11,6 +11,12 @@ describe StringCalculator do
 
         it "returns their sum with unknown amount of numbers" do
             expect(StringCalculator.add("1,2,3,4" * 500)).to eq(22964)
+        end
+    end
+
+    context "add method to handle new lines between numbers" do
+        it "returns their sum" do
+            expect(StringCalculator.add("1\n2,3")).to eq(6)
         end
     end
 
