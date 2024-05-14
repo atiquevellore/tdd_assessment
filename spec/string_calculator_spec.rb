@@ -8,6 +8,10 @@ describe StringCalculator do
         it "returns 0 if the numbers is an empty string" do 
             expect(StringCalculator.add("    ")).to eq(0)
         end
+
+        it "returns their sum with unknown amount of numbers" do
+            expect(StringCalculator.add("1,2,3,4" * 500)).to eq(22964)
+        end
     end
 
     
