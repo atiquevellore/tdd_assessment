@@ -12,6 +12,10 @@ describe StringCalculator do
         it "returns their sum with unknown amount of numbers" do
             expect(StringCalculator.add("1,2,3,4" * 500)).to eq(22964)
         end
+
+        it 'ignores numbers bigger than 1000' do
+             expect(StringCalculator.add("2,1010,1005")).to eq(2)
+        end
     end
 
     context "add method to handle new lines between numbers" do
@@ -22,5 +26,5 @@ describe StringCalculator do
         it "support multiple delimeters and return their sum" do
             expect(StringCalculator.add("//;\n1;2")).to eq(3)
         end
-    end    
+    end
 end
